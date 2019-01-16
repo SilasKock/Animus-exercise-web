@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-apartments',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApartmentsComponent implements OnInit {
 
-  constructor() { }
+  apartments$: Object;
+  testing: Object;
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.apartments$ = this.data.getApartments();
+    this.testing = "Hallo Silas";
   }
 
 }
