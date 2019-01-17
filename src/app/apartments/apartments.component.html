@@ -1,0 +1,17 @@
+<h1>Wohnungen</h1>
+{{ apartments}}
+<ul>
+  <li *ngFor="let apartment of apartments$">
+    <ul>
+      <li>ID: {{ apartment.id}}</li>
+      <li>Einzugsdatum: {{ apartment.einzugsdatum}}</li>
+      <li>Straße: {{ apartment.street}}</li>
+      <li>PLZ: {{ apartment.plz}}</li>
+      <li>Ort: {{ apartment.ort}}</li>
+      <li>Land: {{ apartment.Land}}</li>
+      <li>Kontakt Email: {{ apartment.email}}</li>
+      
+    </ul>
+  </li>
+</ul>
+
