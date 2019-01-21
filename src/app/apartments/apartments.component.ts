@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 export class ApartmentsComponent implements OnInit {
 
   apartments$: Object;
-  testing: Object;
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.apartments$ = this.data.getApartments();
-    this.testing = "Hallo Silas";
+    this.data.getApartments().subscribe(
+      data => this.apartments$ = data);
+    this.apartments$ = this.apartments$; 
   }
 
 }
