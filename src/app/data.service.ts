@@ -12,17 +12,14 @@ export class DataService {
   // Get Apartments
   // Currently mock
   getApartments(){
-    // Use HttpClientMpdule to receive data from api
-    //return [{ "id": 1, "einzugsdatum": "01.03.2019", "street": "Richtweg", "plz": "22880", "ort": "Wedel", "Land": "Deutschland", "email": "mock@web.de"}, { "id": 2, "einzugsdatum": "01.06.2019", "street": "Waldstraße", "plz": "22880", "ort": "Wedel", "Land": "Deutschland", "email": "mock2@web.de"}]
-    // ToDo: Switch url on prod
-    var observ = this.http.get<ApartmentDTO>('https://localhost:44327/api/Apartments');
-    var obsert2 = this.http.get('https://jsonplaceholder.typicode.com/users');
-    return this.http.get('https://localhost:44327/api/Apartments');
+    // Receive all apartments saved on api.
+    return this.http.get('http://animusexerciseapi-dev.eu-central-1.elasticbeanstalk.com/api/apartments');
   }
 
-  // Post new apartment to api
+  // API call for apartment creation
+  // ToDo: Do i need to unsubscibe? Read more about .subscribe
   postApartment(apartment: ApartmentDTO){     
-    return this.http.post<ApartmentDTO>('https://localhost:44327/api/Apartments', apartment).subscribe(
+    return this.http.post<ApartmentDTO>('http://animusexerciseapi-dev.eu-central-1.elasticbeanstalk.com/api/apartments', apartment).subscribe(
       data => {
           console.log("POST Request is successful ", data);
       },

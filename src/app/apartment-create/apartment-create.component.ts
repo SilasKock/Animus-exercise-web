@@ -12,16 +12,18 @@ export class ApartmentCreateComponent implements OnInit {
   // Initialize empty model 
   model = new ApartmentDTO(null,"","",null,"","","");
   submitted = false;
+
   constructor(private data: DataService) { }
-  // TODO: submit form to api
+
   onSubmit() { 
     this.submitted = true
+    // submit apartment to api
     this.data.postApartment(this.model);
   }
+
+  // ForInfo: how can i use this effectively 
   get diagnostic() { return JSON.stringify(this.model); }
   
-
   ngOnInit() {
   }
-
 }

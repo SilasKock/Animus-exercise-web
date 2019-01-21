@@ -13,9 +13,9 @@ export class ApartmentsComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
+    // receive all apartments from api
     this.data.getApartments().subscribe(
       data => this.apartments$ = data);
-    this.apartments$ = this.apartments$; 
   }
 
 }
