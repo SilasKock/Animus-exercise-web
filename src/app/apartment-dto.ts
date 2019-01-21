@@ -1,4 +1,5 @@
 export class ApartmentDTO {
+    // class that defines the attributes of an apartment
     constructor(
         public id: number,
         public available: string,

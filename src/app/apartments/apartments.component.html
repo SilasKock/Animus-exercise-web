@@ -1,5 +1,4 @@
 <h1>Wohnungen</h1>
-{{ apartments}}
 <ul>
   <li *ngFor="let apartment of apartments$">
     <ul>
@@ -9,8 +8,7 @@
       <li>PLZ: {{ apartment.plz}}</li>
       <li>Ort: {{ apartment.place}}</li>
       <li>Land: {{ apartment.country}}</li>
-      <li>Kontakt Email: {{ apartment.email}}</li>
-      
+      <li>Kontakt Email: {{ apartment.email}}</li>      
     </ul>
   </li>
 </ul>
